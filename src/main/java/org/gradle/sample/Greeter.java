@@ -21,5 +21,7 @@ public class Greeter {
         try {
             return InetAddress.getLocalHost().getHostAddress();
         }
+        finally {
+        }
     }
 }
