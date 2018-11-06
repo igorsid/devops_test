@@ -3,6 +3,7 @@ package org.gradle.sample;
 import java.io.InputStream;
 import org.apache.log4j.LogManager;
 import org.apache.commons.io.IOUtils;
+import java.net.InetAddress;
 
 public class Greeter {
     public String getGreeting() throws Exception {
@@ -14,5 +15,8 @@ public class Greeter {
         finally {
             greetingStr.close();
         }
+    }
+    public String getServerip() {
+        return InetAddress.getLocalHost().getHostAddress();
     }
 }
