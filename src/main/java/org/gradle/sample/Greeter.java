@@ -3,8 +3,6 @@ package org.gradle.sample;
 import java.io.InputStream;
 import org.apache.log4j.LogManager;
 import org.apache.commons.io.IOUtils;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 public class Greeter {
     public String getGreeting() throws Exception {
@@ -17,11 +15,7 @@ public class Greeter {
             greetingStr.close();
         }
     }
-    public String getServerip() throws Exception {
-        try {
-            return InetAddress.getLocalHost().getHostAddress();
-        }
-        finally {
-        }
+    public String getServerip() {
+        return System.getenv("HOSTNAME");
     }
 }
